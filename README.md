@@ -1,2 +1,2 @@
 No code here.
-Just the [wiki](/gwhilts/ruby_with_rich/wiki)
+Just the wiki: https://github.com/gwhilts/ruby_with_rich/wiki
