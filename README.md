@@ -1,10 +1,12 @@
 Just a place to iterate over some simple exercises, trying out different methods to solve them.
 
 * [Anagrams](https://github.com/gwhilts/ruby_with_rich/#anagrams)
-* [Fibonacci Sums](https://github.com/gwhilts/ruby_with_rich/#sum-of-even-fibonacci-numbers)
+* [Largest Prime Factor](https://github.com/gwhilts/ruby_with_rich/#largest-prime-factor)
+* [Ye Olde Fibonacci](https://github.com/gwhilts/ruby_with_rich/#ye-olde-fibonacci)
+    * [Even Fibonacci Numbers](https://github.com/gwhilts/ruby_with_rich/#even-fibonacci-numbers)
+    * [Fibonacci Digit Count](https://github.com/gwhilts/ruby_with_rich/#fibonacci-digit-count)
 * [Roman Numerals](https://github.com/gwhilts/ruby_with_rich/#roman-numerals)
 * [Word Clock](https://github.com/gwhilts/ruby_with_rich/#word-clock)
-* [Largest Prime Factor](https://github.com/gwhilts/ruby_with_rich/#largest-prime-factor)
 * [Palindrome Numbers](https://github.com/gwhilts/ruby_with_rich/#palindrome-numbers)
 * [Largest Product in a Series](https://github.com/gwhilts/ruby_with_rich/#largest-product-in-a-series)
 * [Fibonacci Digit Count](https://github.com/gwhilts/ruby_with_rich/#fibonacci-digit-count)
@@ -14,13 +16,26 @@ Just a place to iterate over some simple exercises, trying out different methods
 
 ----
 
+### Project Set-up
+
+A Github repository has been set up with tests for the exercises. To set-up the project:
+
+- Clone the project:
+    - `git clone git@github.com:gwhilts/ruby_with_rich.git ruby_exercises`
+- Install gems:
+    - `cd ruby_exercises`
+    - `bundle install`
+
+Each of the exercises has its own branch so that you can easily isolate work and
+running tests. 
+
 ### Anagrams
 
 **Exercise**
 
-Load words into a dictionary of anagrams. Find anagram sets for a given word from the dictionary.
+Create a class whose constructor will accept a set of words, then return an instance with a method, `#find_for(letters)`, that will return all the anagrams in its dictionary for the given group of letters.
 
-**Examples**
+**Example**
 
 ```ruby
 anagrams = Anagrams.new( %w{ foo echo car baz rat chore bar art tar ochre } )
@@ -32,60 +47,26 @@ anagrams.find_for 'chore'
 => ['chore', 'ochre']
 ```
 
-----
+**Next Steps**
 
-### Sum of Even Fibonacci Numbers
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co anagrams`
+- Run the test: `rake test`
+- Make the test pass. ;-)
 
-**Exercise**
+**Bonus One**
 
-Find the sum of of the even Fibonacci numbers up to a value of 4,000,000
+Ensure that the anagram dictionary only returns one instance of each word. (Commented out expectation in test.)
 
-Relevant methods:
+**Bonus Two**
 
-* `Fib.fib(n)`
-    * _finds the N-th number of the Fibonacci sequence_
-* `Fib.sum_of_evens_to(limit)`
-    * _returns the sum of all the even Fib numbers below the given limit_
+Load the word list from [this file](https://dl.dropboxusercontent.com/u/2600520/katas/data/wordlist.txt) (~30k words)
 
-### Roman Numerals
+How fast does it load? (Should be within a couple seconds.)
 
-**Exercise**
-
-Convert Arabic numbers to Roman numerals
-
-Relevant methods:
-
-* `RomanNumerals#romanize(number)`
-    * _returns a String containing the Roman numeral equivalent to the given number_
-
-----
-
-### Word Clock
-
-**Exercise**
-
-Convert numerical times into text
-
-Times should be rounded to the nearest five minutes, then described using the following words:
-
-"It's", "about", "quarter", "twenty", "twenty", "five", "ten", "half", "past", "to",
-"one", "two", "three", "four", "six", "seven", "eight", "nine",
-and "eleven", "twelve".
-
-If the time is on the hour, the phrase should end with "o'clock".
-
-**Examples**
-
-```ruby
-Clock.say 4, 25
-=> "It is twenty five past four."
-
-Clock.say 6, 50
-=> "It is ten to seven."
-
-Clock.say 12, 58
-=> "It is about one o'clock."
-```
+How fast does it find anagrams? (Should be a few milliseconds.)
 
 ----
 
@@ -93,9 +74,9 @@ Clock.say 12, 58
 
 **Exercise**
 
-Refine Fixnum to add a method that returns its largest prime factor.
+Refine Fixnum to add a method that returns its largest factor which is also a prime number.
 
-**Examples**
+**Example**
 
 ```ruby
 using PrimeFactors
@@ -107,25 +88,183 @@ using PrimeFactors
 => 23
 ```
 
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co prime_factors`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
 ----
 
-### Palindrome Numbers
+### Ye Olde Fibonacci
 
 **Exercise**
 
-Find the largest palindrome number created by the product of two numbers less than or equal to a given limit
+Write a function that calculates the N-th number of the Fibonacci sequence:
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... ( (n-1) + (n-2) )
+
+This is a good kata to repeat. There are a lot of different ways to solve this simple problem using iteration, recursion, a single method, multiple methods working together. How many ways can you find? Which way works best? Is one method faster than another? ... use less memory? ... break when looking very deep in the sequence (n > 1M)? Is the code more or less clear?
+
+**Example**
+
+```ruby
+Fib.fib 6
+=> 5
+
+Fib.fib 11
+=> 55
+
+Fib.fib 10_000
+=>  20793608237133498072112648988... (a very big number)
+```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co fib`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+### Even Fibonacci Numbers
+
+**Exercise**
+
+Write another function for your Fib class that returns the sum of the even numbers in the sequence that are less than or equal to a given limit.
+
+**Example**
+
+```ruby
+Fib.sum_of_evens_to 20
+=> 10
+# 0, 1, 1, 2, 3, 5, 8, 13
+# _, _, _, 2, _, _, 8, _
+# 10
+
+Fib.sum_of_evens_to 100
+=> 44
+```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co fib`
+- Open `test/fib_test.rb` and uncomment the block `describe 'Fib.sum_of_evens_to'`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+----
+
+### Fibonacci Digit Count
+
+**Exercise**
+
+One of the problems from [Project Euler](https://projecteuler.net/problem=25), is to determine the index
+of the first number in the Fibonacci sequence containing 1000 digits.
+
+The exercise here is to add another method to your Fib class that will take a count, C, and quickly return the index of the sequence
+that has at least C digits. It should be able to return the answer in far less than a second, even when searching
+for numbers with 10,000 digits or more.
+
 
 **Examples**
 
 ```ruby
-PalindromeNumbers.find_largest_product(99)
-=> 9009
-# 99 * 91
+Fib.index_where_digit_count 3
+=> 12
+# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
 
-PalindromeNumbers.find_largest_product(999)
-=> 906609
-# 993 * 913
+Fib.index_where_digit_count 10000
+=> 47847
+# returns in ~ 0.1s
 ```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co fib`
+- Open `test/fib_test.rb` and uncomment the block `describe 'Fib.first_with_digit_count'`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+----
+
+### Roman Numerals
+
+**Exercise**
+
+Write a function that converts numbers to their Roman Numeral equivalents.
+
+**Example**
+
+```ruby
+rn = RomanNumerals.new
+rn.romanize 42
+=> "XLII"
+
+rn.romanize 389
+=> "CCCLXXXIX"
+
+rn.romanize 3411
+=> "MMMCDXI"
+```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co roman_numerals`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+----
+
+### Word Clock
+
+**Exercise**
+
+Convert numerical times into text
+
+Times should be rounded to the nearest five minutes, then described using the following words:
+
+"It's", "about", "quarter", "twenty", "five", "ten", "half", "past", "to",
+"one", "two", "three", "four", "six", "seven", "eight", "nine",
+and "eleven", "twelve".
+
+If the time is on the hour, the phrase should end with "o'clock".
+
+**Examples**
+
+```ruby
+Clock.say 4, 25
+=> "It's twenty five past four."
+
+Clock.say 6, 50
+=> "It's ten to seven."
+
+Clock.say 12, 58
+=> "It's about one o'clock."
+```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co word_clock`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
 ----
 
 ### Largest Product in a Series
@@ -160,69 +299,77 @@ BigAssNumber.largest_product_of 2
 BigAssNumber.largest_product_of 4
 => 5832
 # 9 * 9 * 8 * 9 == 5832
+
 ```
+
+**Next Steps**
+
+A test and skeleton class already exists in `test/big_ass_number_test.rb` and `lib/big_ass_number.rb` respectively.
+
+The skeleton class has a String constant, `DIGITS`, and a method `largest_product_of(length)`. You just need to fill
+in the method implementation.
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co big_number`
+- Run the test: `rake test`
+- Make the test pass. ;-)
 
 ----
 
-### Fibonacci Digit Count
+### Triangle Number Factors
 
 **Exercise**
 
-One of the problems from [Project Euler](https://projecteuler.net/problem=25), is to determine the index
-of the first number in the Fibonacci sequence containing 1000 digits.
+_from [Project Euler Problem 12](https://projecteuler.net/problem=12)_
 
-The kata here is to write a method that will take a count, C, and quickly return the index of the sequence
-that has at least C digits. It should be able to return the answer in less than a second, when searching
-for numbers up to at least 10,000 digits.
+> The sequence of triangle numbers is generated by adding the natural numbers. So the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten terms would be:
 
-
-**Examples**
-
-```ruby
-Fib.first_with_digit_count 2
-=> 8
-# 0, 1, 1, 2, 3, 5, 8, 13
-
-Fib.first_with_digit_count 3
-=> 12
-# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
-
-Fib.first_with_digit_count 10000
-=> 47847
-# returns in ~ 0.1s
+```
+1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
 ```
 
-----
+The PE problem asks us to find the first number in the sequence that has 500 factors.
 
-### Collatz Sequence
+Implement a method that will take a positive integer and return the first number in the triangle sequence with at least that many factors.
 
-**Exercise**
+For instance if we asked for the first triangle number with a factor count of 5, the answer should be 28:
 
-[Project Euler problem 14](https://projecteuler.net/problem=14) asks us to find the starting number under
-1,000,000 that creates the longest Collatz chain.
+| Tri. No.  | Factors            | Count |
+| :-------- | :----------------- | :---- |
+| 1         | 1                  | 1     |
+| 3         | 1, 3               | 2     |
+| 6         | 1, 2, 3, 6         | 4     |
+| 10        | 1, 2, 5, 10        | 4     |
+| 15        | 1, 3, 5, 15        | 4     |
+| 21        | 1, 3, 7, 21        | 4     |
+| 28        | 1, 2, 4, 7, 14, 28 | 6     |
 
-The sequence begins with a number n, then continues with n/2 if is even, or (3n + 1) if n is odd. The rule
-is repeated until n reaches one. (It is assumed that it will always reach 1.)
 
-To solve the Project Euler problem, let's write a class with a method that will return the Collatz sequence
-beginning with any given positive number. Then add a method that returns the starting number and length of
-the longest chain that begins with a number less than or equal to a given limit.
-
-**Examples**
+**Example**
 
 ```ruby
-Collatz.sequence_from 13
-=> [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+Triangles.first_with_factor_count 5
+=> 28
 
-Collatz.sequence_from 6
-=> [6, 3, 10, 5, 16, 8, 4, 2, 1]
+Triangles.first_with_factor_count 10
+=> 120
 
-Collatz.longest_under 8
-=> { start: 7, length: 17 }
-
-Collatz.longest_under 2000
-=> { start: 1161, length: 182 }
+Triangles.first_with_factor_count 500
+=> 73920
 ```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co triangles`
+- Run the test: `rake test`
+- Make the first test pass
+- Uncomment the second test
+- Make the second test pass
 
 ----
 
@@ -261,6 +408,16 @@ NumberWord.letter_count 1, 20
 => 112
 ```
 
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co number_words`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+---
 ### Amicable Numbers
 
 **Exercise**
@@ -294,3 +451,82 @@ AmicableNumbers.sum_to 300
 AmicableNumbers.sum_to 2000
 => 2898
 ```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co amicable`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+----
+
+### Palindrome Numbers
+
+**Exercise**
+
+Find the largest palindrome number created by the product of two numbers less than or equal to a given limit
+
+**Examples**
+
+```ruby
+PalindromeNumbers.find_largest_product(99)
+=> 9009
+# 99 * 91
+
+PalindromeNumbers.find_largest_product(999)
+=> 906609
+# 993 * 913
+```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co palidrome`
+- Run the test: `rake test`
+- Make the test pass. ;-)
+
+----
+
+### Collatz Sequence
+
+**Exercise**
+
+[Project Euler problem 14](https://projecteuler.net/problem=14) asks us to find the starting number under
+1,000,000 that creates the longest Collatz chain.
+
+The sequence begins with a number n, then continues with n/2 if is even, or (3n + 1) if n is odd. The rule
+is repeated until n reaches one. (It is assumed that it will always reach 1.)
+
+To solve the Project Euler problem, let's write a class with a method that will return the Collatz sequence
+beginning with any given positive number. Then add a method that returns the starting number and length of
+the longest chain that begins with a number less than or equal to a given limit.
+
+**Examples**
+
+```ruby
+Collatz.sequence_from 13
+=> [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+
+Collatz.sequence_from 6
+=> [6, 3, 10, 5, 16, 8, 4, 2, 1]
+
+Collatz.longest_under 8
+=> { start: 7, length: 17 }
+
+Collatz.longest_under 2000
+=> { start: 1161, length: 182 }
+```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co collatz`
+- Run the test: `rake test`
+- Make the test pass. ;-)
