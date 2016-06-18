@@ -11,28 +11,28 @@ class FibTest < MiniTest::Test
     end
   end
 
-  describe "Fib.sum_of_evens_to(limit)" do
-    # _, _, _, 2, _, _, 8, __, __, 34, __, 89, 144, 233
-    # limit = 100
-    # 2 + 8 + 34 = 44
-    # limit = 200
-    # 2 + 8 + 34 + 144 = 188
-    it "adds even Fibacci numbers" do
-      Fib.sum_of_evens_to(8).must_equal 10
-      Fib.sum_of_evens_to(100).must_equal 44
-      Fib.sum_of_evens_to(200).must_equal 188
-    end
-  end
+# describe "Fib.sum_of_evens_to(limit)" do
+#   # _, _, _, 2, _, _, 8, __, __, 34, __, 89, 144, 233
+#   # limit = 100
+#   # 2 + 8 + 34 = 44
+#   # limit = 200
+#   # 2 + 8 + 34 + 144 = 188
+#   it "adds even Fibacci numbers" do
+#     Fib.sum_of_evens_to(8).must_equal 10
+#     Fib.sum_of_evens_to(100).must_equal 44
+#     Fib.sum_of_evens_to(200).must_equal 188
+#   end
+# end
 
-  describe "Fib.index_where_digit_count(count)" do
-    it "finds the index of the first fibonacci number with the given number of digits" do
-      Fib.index_where_digit_count(3).must_equal 12
-      Fib.index_where_digit_count(100).must_equal 476
-    end
+# describe "Fib.index_where_digit_count(count)" do
+#   it "finds the index of the first fibonacci number with the given number of digits" do
+#     Fib.index_where_digit_count(3).must_equal 12
+#     Fib.index_where_digit_count(100).must_equal 476
+#   end
 
-    it "works quickly with very large numbers" do
-      # Find the first Fib number with 1k digits in < 1 second
-      ( Benchmark.realtime { Fib.index_where_digit_count 10000 } ).to_i.must_equal 0
-    end
-  end
+#   it "works quickly with very large numbers" do
+#     # Find the first Fib number with 1k digits in < 1 second
+#     ( Benchmark.realtime { Fib.index_where_digit_count 10000 } ).to_i.must_equal 0
+#   end
+# end
 end
