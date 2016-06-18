@@ -23,3 +23,6 @@
 
 ## Mac Sillyness
 .DS_Store
+
+## Don't Upload the solutions!
+/lib/*.rb
