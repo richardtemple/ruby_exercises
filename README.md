@@ -29,6 +29,8 @@ A Github repository has been set up with tests for the exercises. To set-up the 
 Each of the exercises has its own branch so that you can easily isolate work and
 running tests. 
 
+----
+
 ### Anagrams
 
 **Exercise**
