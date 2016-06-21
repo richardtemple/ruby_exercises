@@ -13,7 +13,7 @@ Just a place to iterate over some simple exercises, trying out different methods
 * [Collatz Sequence](https://github.com/gwhits/ruby_with_rich/#collatz-sequence)
 * [Number Words](http://github.com/gwhilts/ruby_with_rich/#number-words)
 * [Amicable Numbers](http://github.com/gwhilts/ruby_with_rich/#amicable-numbers)
-* [Gilded Rose](http://github.com/gwhilts/ruby_with_rich/#gilded_rose)
+* [Gilded Rose](http://github.com/gwhilts/ruby_with_rich/#gilded-rose)
 
 ----
 
