@@ -625,3 +625,15 @@ tix.days_remaining
 tix.quality
 => 0
 ```
+
+**Next Steps**
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co gilded_rose`
+- Run the test: `rake test`
+- Refactor the GildedRose class to better accommodate adding new features
+- Add support for "Conjured Items"
+- Removed the "skip" directive from the test
+- Make the test pass. ;-)
