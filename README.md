@@ -635,5 +635,5 @@ tix.quality
 - Run the test: `rake test`
 - Refactor the GildedRose class to better accommodate adding new features
 - Add support for "Conjured Items"
-- Removed the "skip" directive from the test
+- Remove the "skip" directive from the test
 - Make the test pass. ;-)
