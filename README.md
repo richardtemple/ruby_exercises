@@ -649,12 +649,12 @@ _From [Project Euler, Problem 18](https://projecteuler.net/problem=18)_
 
 Imagine a 'pyramid' of numbers like so:
 
-```
-    3    
-   7 4    
-  2 4 6    
- 8 5 9 3    
-```
+<p align=center>
+3    
+7 4    
+2 4 6    
+8 5 9 3    
+</p>
 
 The following a path of vertically adjacent numbers from top to bottom, the highest
 sum possible is 23: 3 + 7 + 4 + 9
