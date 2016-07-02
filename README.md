@@ -650,10 +650,10 @@ _From [Project Euler, Problem 18](https://projecteuler.net/problem=18)_
 Imagine a 'pyramid' of numbers like so:
 
 <p align=center>
-3    
-7 4    
-2 4 6    
-8 5 9 3    
+3<br/>
+7 4<br/>
+2 4 6<br/>
+8 5 9 3<br/>
 </p>
 
 The following a path of vertically adjacent numbers from top to bottom, the highest
