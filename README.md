@@ -773,10 +773,10 @@ To solve this problem, create a Grid class, with a class method `largest_product
 require 'grid_data.rb'
 
 Grid.largest_product(GridData::G1)
-=>
+=> 61642944
 
 Grid.largest_product(GridData::G2)
-=>
+=> 77006457
 
 ```
 
