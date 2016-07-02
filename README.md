@@ -661,34 +661,34 @@ sum possible is 23: 3 + 7 + 4 + 9
 
 Now, imagine this set:
 
-```
-     5  
-    2 9  
-   8 3 7  
-  1 4 6 0  
-```
+<p align=center>
+5<br/>
+2 9<br/>
+8 3 7<br/>
+1 4 6 0<br/>
+</p>
 
 Here, the maximum path sum would be 27: 5 + 9 + 7 + 6. 
 
 Project Euler problem 18 asks us to calculate the highest path sum, given the pyramid below: 
 
-```
-                 75  
-                95 64  
-               17 47 82  
-             18 35 87 10  
-            20 04 82 47 65  
-           19 01 23 75 03 34  
-          88 02 77 73 07 63 67  
-         99 65 04 28 06 16 70 92  
-        41 41 26 56 83 40 80 70 33  
-       41 48 72 33 47 32 37 16 94 29  
-      53 71 44 65 25 43 91 52 97 51 14  
-     70 11 33 28 77 73 17 78 39 68 17 57  
-    91 71 52 38 17 14 91 43 58 50 27 29 48  
-  63 66 04 68 89 53 67 30 73 16 69 87 40 31  
- 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23  
-```
+<p align=center>
+75<br/>
+95 64<br/>
+17 47 82<br/>
+18 35 87 10<br/>
+20 04 82 47 65<br/>
+19 01 23 75 03 34<br/>
+88 02 77 73 07 63 67<br/>
+99 65 04 28 06 16 70 92<br/>
+41 41 26 56 83 40 80 70 33<br/>
+41 48 72 33 47 32 37 16 94 29<br/>
+53 71 44 65 25 43 91 52 97 51 14<br/>
+70 11 33 28 77 73 17 78 39 68 17 57<br/>
+91 71 52 38 17 14 91 43 58 50 27 29 48<br/>
+63 66 04 68 89 53 67 30 73 16 69 87 40 31<br/>
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23<br/>
+</p>
 
 To solve this problem, write a method that accepts a nested array representing 
 a 'pyramid' like the ones above, and returns the maximum path sum possible.
@@ -698,24 +698,24 @@ a 'pyramid' like the ones above, and returns the maximum path sum possible.
 (Assume `p1` and `p2` have been assigned to first two sets of numbers above.)
 
 ```ruby
-Pyramid.maximum_path_sum P1
+Pyramid.maximum_path_sum p1
 => 23 # 3 + 7 + 4 + 9
 
-Pyramid.maximum_path_sum P2
+Pyramid.maximum_path_sum p2
 => 27  # 5 + 9 + 7 + 6
 ```
 
 **Next Steps**
 
-A skeleton class, test class, and dataset class have created for you. The dataset
+A skeleton class, a test class, and a dataset class have created for you. The dataset
 class contains three constants, `P1`, `P2`, and `P3` that contain 'pyramids' with
 4, 15, and 100 rows, respectively.
 
-The test class contains two specs. The first uses the two datasets to validate
+The test class contains two specs. The first uses the two smaller datasets to validate
 that `Pyramid.maximum_path_sum(p)` correctly returns the highest sum possible 
-following a path of adjacent number from top to bottom. The second uses the third
-dataset to validate that your algorithm is efficient. (There are 2**99 
-possible routes in this dataset, so a brute force solution will not work.)
+following a path of adjacent number from top to bottom. The second benchmarks how
+fast the method finds a solution using the third dataset. There are 2**99 
+possible paths in this pyramid, so a brute force solution will not work.
 
 
 - [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
