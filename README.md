@@ -14,7 +14,7 @@ Just a place to iterate over some simple exercises, trying out different methods
 * [Number Words](http://github.com/gwhilts/ruby_with_rich/#number-words)
 * [Amicable Numbers](http://github.com/gwhilts/ruby_with_rich/#amicable-numbers)
 * [Gilded Rose](http://github.com/gwhilts/ruby_with_rich/#gilded-rose)
-
+* [Maximum Path Sum](http://github.com/gwhilts/ruby_with_rich/#maximum-path-sum)
 ----
 
 ### Project Set-up
@@ -637,3 +637,92 @@ tix.quality
 - Add support for "Conjured Items"
 - Remove the "skip" directive from the test
 - Make the test pass. ;-)
+
+----
+
+### Maximum Path Sum
+
+**Exercise**
+
+_From [Project Euler, Problem 18](https://projecteuler.net/problem=18)_
+
+Imagine a 'pyramid' of numbers like so:
+
+<center>
+3    
+7 4    
+2 4 6    
+8 5 9 3    
+</center>
+
+The following a path of vertically adjacent numbers from top to bottom, the highest
+sum possible is 23: 3 + 7 + 4 + 9
+
+Now, imagine this set:
+
+<center>
+5  
+2 9  
+8 3 7  
+1 4 6 0  
+</center>
+
+Here, the maximum path sum would be 27: 5 + 9 + 7 + 6. 
+
+Project Euler problem 18 asks us to calculate the highest path sum, given the pyramid below: 
+
+<center>
+75  
+95 64  
+17 47 82  
+18 35 87 10  
+20 04 82 47 65  
+19 01 23 75 03 34  
+88 02 77 73 07 63 67  
+99 65 04 28 06 16 70 92  
+41 41 26 56 83 40 80 70 33  
+41 48 72 33 47 32 37 16 94 29  
+53 71 44 65 25 43 91 52 97 51 14  
+70 11 33 28 77 73 17 78 39 68 17 57  
+91 71 52 38 17 14 91 43 58 50 27 29 48  
+63 66 04 68 89 53 67 30 73 16 69 87 40 31  
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23  
+</center>
+
+To solve this problem, write a method that accepts a nested array representing 
+a 'pyramid' like the ones above, and returns the maximum path sum possible.
+
+**Examples**
+
+(Assume `p1` and `p2` have been assigned to first two sets of numbers above.)
+
+```ruby
+Pyramid.maximum_path_sum P1
+=> 23 # 3 + 7 + 4 + 9
+
+Pyramid.maximum_path_sum P2
+=> 27  # 5 + 9 + 7 + 6
+```
+
+**Next Steps**
+
+A skeleton class, test class, and dataset class have created for you. The dataset
+class contains three constants, `P1`, `P2`, and `P3` that contain 'pyramids' with
+4, 15, and 100 rows, respectively.
+
+The test class contains two specs. The first uses the two datasets to validate
+that `Pyramid.maximum_path_sum(p)` correctly returns the highest sum possible 
+following a path of adjacent number from top to bottom. The second uses the third
+dataset to validate that your algorithm is efficient. (There are 2**99 
+possible routes in this dataset, so a brute force solution will not work.)
+
+
+- [Set up the project](http://github.com/gwhilts/ruby_with_rich/#project-set-up), if you haven't already done so.
+- Navigate to the project directory
+- Pull the latest updates, then switch to the exercise branch
+    - `git pull --all; git co pyramid`
+- Run the test: `rake test`
+- Implement `Pyramid.maximum_path_sum` to make the first test pass
+- Remove the "skip" directive from the second test
+- Make all the tests pass. ;-)
+
