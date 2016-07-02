@@ -15,6 +15,7 @@ Just a place to iterate over some simple exercises, trying out different methods
 * [Amicable Numbers](http://github.com/gwhilts/ruby_with_rich/#amicable-numbers)
 * [Gilded Rose](http://github.com/gwhilts/ruby_with_rich/#gilded-rose)
 * [Maximum Path Sum](http://github.com/gwhilts/ruby_with_rich/#maximum-path-sum)
+
 ----
 
 ### Project Set-up
