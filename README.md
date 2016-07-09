@@ -15,6 +15,7 @@ Just a place to iterate over some simple exercises, trying out different methods
 * [Amicable Numbers](http://github.com/gwhilts/ruby_with_rich/#amicable-numbers)
 * [Gilded Rose](http://github.com/gwhilts/ruby_with_rich/#gilded-rose)
 * [Maximum Path Sum](http://github.com/gwhilts/ruby_with_rich/#maximum-path-sum)
+* [Largest Product in a Grid](http://github.com/gwhilts/ruby_with_rich/largest-product-in-a-grid)
 
 ----
 
@@ -389,7 +390,8 @@ To solve the problem, create a class with two methods: one that will convert
 any number (up to at least 9999) to an English phrase, and a second that will
 return the letter count for any number or range of numbers (up to 9999).
 
-The phrases should adhere to the British tradition of using the word "and" like so:
+The phrases should adhere to the British tradition of using the word "and" between
+"hundred" and the remainder like so:
 
 - 413  => "four hundred and thirteen"
 - 2148 => "two thousand one hundred and forty eight"
@@ -436,7 +438,7 @@ _From [Project Euler, Problem 21](https://projecteuler.net/problem=21)_
 >
 > Evaluate the sum of all the amicable numbers under 10000.
 
-To solve this problem let's create a class with two public methods: One that will
+To solve this problem let's create a class with two public methods: one that will
 return the unique pairs of amicable numbers up to a given limit, and another that
 will return the sum of all the amicable numbers up to a limit.
 
@@ -503,7 +505,7 @@ PalindromeNumbers.find_largest_product(999)
 [Project Euler problem 14](https://projecteuler.net/problem=14) asks us to find the starting number under
 1,000,000 that creates the longest Collatz chain.
 
-The sequence begins with a number n, then continues with n/2 if is even, or (3n + 1) if n is odd. The rule
+The sequence begins with a number n, then continues with n/2 if n is even, or (3n + 1) if n is odd. The rule
 is repeated until n reaches one. (It is assumed that it will always reach 1.)
 
 To solve the Project Euler problem, let's write a class with a method that will return the Collatz sequence
@@ -562,8 +564,8 @@ Refactor the `GildedRose` so that you easily add code to support the new require
 > "Aged Brie" actually increases in Quality the older it gets
 > The Quality of an item is never more than 50
 > "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
-> "Backstage passes", like aged brie, increases in Quality as it's Days Remaining value approaches; Quality increases by 2
-> when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+> "Backstage passes", like aged brie, increase in Quality as the Days Remaining value approaches; Quality increases by 2
+> when there are 10 days or less, and by 3 when there are 5 days or less, but Quality drops to 0 after the concert.
 > We have recently signed a supplier of conjured items. This requires an update to our system:
 > 
 > "Conjured" items degrade in Quality twice as fast as normal items.
@@ -582,13 +584,13 @@ a `quality` metric, and a `sell_in` value representing the number of
 days remaining before the item should be sold. In Sandi's version, the
 method and the attributes belong to instances of a `GildedRose` class 
 (before refactoring). In both versions the `update_quality` method
-(which Sandi call `tick`) is fifty or so lines of tangled, nested if
+(which Sandi calls `tick`) is fifty or so lines of tangled, nested if
 statements, that beg to be refactored into something more manageable.
 
 I've also implemented the test Jim included with his version, adjusted
 to accommodate using the GildedRose class, and ported from somewhat
 dated rspec-given code to minitest-spec.  All the tests for the 
-existing code is passing. The tests for the new "Conjured Item" code is
+existing code are passing. The test for the new "Conjured Item" code is
 set to skip, so we can refactor "in the green" before adding it.
 
 **Examples**
